@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import StaticPage from '@/components/StaticPage'
 
 Vue.use(Router)
 
