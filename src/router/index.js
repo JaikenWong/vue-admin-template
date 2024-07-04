@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import StaticPage from '@/components/StaticPage'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
+  },
+  {
+    path: '/static-page',
+    name: 'StaticPage',
+    component: () => import('@/components/StaticPage')
   },
 
   {
