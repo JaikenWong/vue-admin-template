@@ -1,6 +1,6 @@
 <template>
   <div id="multi-step-form-container">
-    <h1>Multi Step Form</h1>
+    <h1>Create a robustness evaluation task</h1>
     <ul ref="formStepperListRef" class="form-stepper form-stepper-horizontal">
       <li v-for="step in steps" :key="step.id" :class="getStepClass(step.number)" :step="step.number">
         <a class="mx-2">
