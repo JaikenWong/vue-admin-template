@@ -32,12 +32,10 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      console.log('response login test')
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
-        console.log(response)
-        commit('SET_TOKEN', data.data.token)
-        setToken(data.data.token)
+        commit('SET_TOKEN', data.token)
+        setToken(data.token)
         resolve()
       }).catch(error => {
         reject(error)
@@ -54,9 +52,7 @@ const actions = {
         if (!data) {
           return reject('Verification failed, please Login again.')
         }
-
         const { name, avatar } = data
-
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
         resolve(data)
