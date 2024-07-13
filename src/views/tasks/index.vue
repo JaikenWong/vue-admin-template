@@ -1,9 +1,9 @@
 <template>
   <div id="multi-step-form-container">
-    <h1>Create a robustness evaluation task</h1>
+    <h1>创建鲁棒性评估任务</h1>
     <ul ref="formStepperListRef" class="form-stepper form-stepper-horizontal">
       <li v-for="step in steps" :key="step.id" :class="getStepClass(step.number)" :step="step.number">
-        <a class="mx-2">
+        <a class="mx-auto">
           <span class="form-stepper-circle">{{ step.number }}</span>
           <div class="label">{{ step.title }}</div>
         </a>
@@ -49,9 +49,11 @@ export default {
   data() {
     return {
       steps: [
-        { id: 1, number: 1, title: 'Personal Info' },
-        { id: 2, number: 2, title: 'Contact Info' },
-        { id: 3, number: 3, title: 'Final Step' },
+        { id: 1, number: 1, title: '任务信息' },
+        { id: 2, number: 2, title: '测评配置' },
+        { id: 3, number: 3, title: '测评策略' },
+        { id: 4, number: 4, title: '测评过程' },
+        { id: 5, number: 5, title: '测评结果' },
       ],
       activeStep: 1,
       formData: {
@@ -131,6 +133,10 @@ h2 {
 
 .d-none {
   display: none;
+}
+
+a.mx-auto {
+  text-align: center;
 }
 
 .form-step {
@@ -226,6 +232,7 @@ ul.form-stepper li a .form-stepper-circle {
   text-align: center;
   background: rgba(0, 0, 0, 0.38);
   border-radius: 50%;
+  padding: 6px 0;
 }
 
 .form-stepper .form-stepper-active .form-stepper-circle {
@@ -271,6 +278,7 @@ ul.form-stepper li a .form-stepper-circle {
 .form-stepper .label {
   font-size: 1rem;
   margin-top: 0.5rem;
+
 }
 
 .form-stepper a {
