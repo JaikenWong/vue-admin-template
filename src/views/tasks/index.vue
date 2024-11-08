@@ -16,14 +16,21 @@
         <!-- 根据步骤号渲染不同的表单内容 -->
         <template v-if="step.number === 1">
           <div class="mb-3">
-            <label for="inputName">Your Name</label>
+            <label for="inputName">任务名称</label>
+            <input type="text" class="form-control" id="inputName" v-model="formData.name">
+
+            <label for="inputName">任务描述</label>
             <input type="text" class="form-control" id="inputName" v-model="formData.name">
           </div>
         </template>
         <template v-if="step.number === 2">
           <div class="mb-3">
-            <label for="inputEmail">Email address</label>
+            <label for="inputEmail">场景名称</label>
             <input type="email" class="form-control" id="inputEmail" v-model="formData.email">
+
+            <label for="inputEmail">数据集选择</label>
+            <input type="email" class="form-control" id="inputEmail" v-model="formData.email">
+
           </div>
         </template>
         <template v-if="step.number === 3">
@@ -57,6 +64,10 @@ export default {
       ],
       activeStep: 1,
       formData: {
+        task: {
+          name: '',
+          description: ''
+        },
         name: '',
         email: '',
         message: '',
